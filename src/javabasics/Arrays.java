@@ -7,9 +7,9 @@ import java.util.Scanner;
 public class Arrays {
 
     public static void main(String[] args) {
-        StudentGrades();
+        //StudentGrades();
         RandomCarDigit();
-        DaysOfTheWeek();
+        //DaysOfTheWeek();
     }
 
     public static void RandomCarDigit() {
