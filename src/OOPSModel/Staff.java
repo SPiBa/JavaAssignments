@@ -3,35 +3,33 @@ package OOPSModel;
 import java.util.*;
 
 public class Staff {
-    private static int staff_id;
-    private static int age;
-    private static String f_name;
-    private static String l_name;
-    private static String serv_module;
+    private  int staff_id;
+    private  int age;
+    private  String f_name;
+    private  String l_name;
+    private  String facility;
     private static int staffCount = 0;
     private static  int eldestAge = 0;
     private static String eldestf_name;
     private static String eldestl_name;
 
-    public String getServ_Module() {
-        return serv_Module;
+    public String getFacility() {
+        return facility;
     }
-
-    private String serv_Module;
 
    private static Map<String,Integer> staffByModule= new HashMap<>();
 
 
     //Parametrized constructor
-    public Staff(int staff_id,int age,String f_name, String l_name, String serv_Module){
+    public Staff(int staff_id,int age,String f_name, String l_name, String facility){
         this.staff_id = staff_id;
         this.age = age;
         this.f_name = f_name;
         this.l_name = l_name;
-        this.serv_Module  = serv_Module;
+        this.facility = facility;
         staffCount = staffCount +1;
 
-        staffByModule.put(serv_Module,staff_id);
+        staffByModule.put(facility,staff_id);
 
         if (this.age > eldestAge) {
             eldestAge = this.age;
@@ -41,15 +39,15 @@ public class Staff {
 
     }
     //Print all the staff details
-    public static void displayStaffDetails(){
-        System.out.println("Staff id " + staff_id + "is " + f_name  + " "+ l_name + " of age " + age + " who belongs to department " + serv_module);
+    public void displayStaffDetails(){
+        System.out.println("Staff ID" + staff_id + "is " + f_name  + ", "+ l_name + " of age " + age + " who works in the " + facility + " facility.");
 
     }
-    public static ArrayList<Staff> addDeptStaff (ArrayList<Staff> staffList,String serv_Module){
+    public static ArrayList<Staff> addDeptStaff (ArrayList<Staff> staffList,String facility){
         ArrayList<Staff> deptStaff = new ArrayList<Staff>();
 
         for (Staff ds : staffList) {
-            if (ds.getServ_Module().contains(serv_Module)) {
+            if (ds.getFacility().contains(facility)) {
                 deptStaff.add(ds);
             }
         }
@@ -57,14 +55,14 @@ public class Staff {
 
     }
 
-    public static int noOfStaffPerModule(String serv_Module){
+    public static int noOfStaffPerModule(String facility){
         int count = 0;
         Set set = staffByModule.entrySet();
         Iterator it = set.iterator();
         while(it.hasNext()) {
             Map.Entry mapElement =(Map.Entry) it.next();
             String myStr = (String) mapElement.getKey();
-            if (myStr.contains(serv_Module)) {
+            if (myStr.contains(facility)) {
                 count = count + 1;
             }
         }

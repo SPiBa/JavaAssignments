@@ -7,18 +7,18 @@ public class Furniture {
     private String type; //Chair, Table, Rack
     private String material; //wooden, iron
 
-    public String getServ_module() {
-        return this.serv_module;
+    public String getFacility() {
+        return this.facility;
     }
 
-    private String serv_module; //Library,Lab,MusicRoom,Class
+    private String facility; //Library,Lab,MusicRoom,Class
     private static int noOfChairs;
 
-    public Furniture(int id, String type, String material,String serv_module ){
+    public Furniture(int id, String type, String material,String facility ){
         this.id = id;
         this.type = type;
         this.material = material;
-        this.serv_module = serv_module;
+        this.facility = facility;
 
         if (type == "Chair")
             noOfChairs = noOfChairs + 1;
@@ -26,22 +26,21 @@ public class Furniture {
 
     //Print all the furniture details
     public void displayFurnitureDetails(){
-        System.out.println("For furtinure id " + this.id + "- type is " + type  + ", material is "+ material + " and belongs to service module" + serv_module);
+        System.out.println("Furniture " + id + "- " + type  + ", material - "+ material + " belongs to facility " + facility);
 
     }
 
-    public static ArrayList<Furniture> addDeptFurniture (ArrayList<Furniture> furnitureList,String serv_Module){
+    public static ArrayList<Furniture> addDeptFurniture (ArrayList<Furniture> furnitureList,String facility){
         ArrayList<Furniture> deptFurniture = new ArrayList<Furniture>();
 
         for (Furniture deptFurn : furnitureList) {
-            if (deptFurn.getServ_module().contains(serv_Module)) {
+            if (deptFurn.getFacility().contains(facility)) {
                 deptFurniture.add(deptFurn);
             }
         }
         return deptFurniture;
 
     }
-
 
 
     public static void displayTotalNoOfChairs(){

@@ -28,10 +28,10 @@ public class Books {
     //Print all the book details
     public void displayBookDetails(){
         if (isRented == true)
-            print = "is rented";
+            print = "book is rented";
         else
-            print = "is available for renting";
-        System.out.println("For book " + this.bookNo + "- ISBN code is " + isbn  + ", author is "+ author+ " and " + print);
+            print = "book is available for renting";
+        System.out.println("BOOK" + this.bookNo + "- ISBN code is " + isbn  + ", author is "+ author+ " and " + print);
 
     }
 

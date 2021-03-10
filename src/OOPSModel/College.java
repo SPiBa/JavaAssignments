@@ -21,14 +21,14 @@ public class College {
 
         //Enter the furniture details of the college
         ArrayList<Furniture> furnitureList = new ArrayList<>();
-        furnitureList.add(new Furniture(1,"Chair","Wooden","EnggLibrary"));
-        furnitureList.add(new Furniture(2,"Table","Wooden","EnggLibrary"));
+        furnitureList.add(new Furniture(1,"Chair","Wood","EnggLibrary"));
+        furnitureList.add(new Furniture(2,"Table","Wood","EnggLibrary"));
         furnitureList.add(new Furniture(3,"Rack","Iron","EnggLibrary"));
-        furnitureList.add(new Furniture(4,"Chair","Wooden","Lab"));
+        furnitureList.add(new Furniture(4,"Chair","Wood","Lab"));
         furnitureList.add(new Furniture(5,"Table","Iron","Lab"));
-        furnitureList.add(new Furniture(6,"Chair","Wooden","MusicRoom"));
-        furnitureList.add(new Furniture(7,"Chair","Wooden","ArtsLibrary"));
-        furnitureList.add(new Furniture(8,"Table","Wooden","ArtsLibrary"));
+        furnitureList.add(new Furniture(6,"Chair","Wood","MusicRoom"));
+        furnitureList.add(new Furniture(7,"Chair","Wood","ArtsLibrary"));
+        furnitureList.add(new Furniture(8,"Table","Wood","ArtsLibrary"));
         furnitureList.add(new Furniture(9,"Rack","Iron","ArtsLibrary"));
 
 
@@ -43,7 +43,7 @@ public class College {
         //Add a library
         Library LibEngg = new Library("ENGG",
                 (Books.getDeptBooks(bookList,"ENGG")),
-                (Furniture.addDeptFurniture(furnitureList,"ArtsLibrary")),
+                (Furniture.addDeptFurniture(furnitureList,"EnggLibrary")),
                 (Staff.addDeptStaff(staffList,"EnggLibrary")));
 
         Library LibArts = new Library("ARTS",
@@ -67,11 +67,6 @@ public class College {
         //Fetch the number of departments the college has
         System.out.println("The no of departments in the college are " + Department.getNoOfDepartments());
 
-
-        //STAFF
-        //print all the staff details
-        for (Staff sf : staffList)
-            sf.displayStaffDetails();
 
         //print the details of eldest staff member
         Staff.printEldestStaff();

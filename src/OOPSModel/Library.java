@@ -1,11 +1,6 @@
 package OOPSModel;
 
-import javax.swing.*;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.Map;
 
 public class Library {
     String deptCode;
@@ -19,11 +14,11 @@ public class Library {
         this.book = book;
         this.furniture = furniture;
         this.staff = staff;
-
     }
 
     public static void displayLibraryDetails (Library lib){
-        System.out.println("The department code of Library is "+lib.deptCode);
+        System.out.println("The department code of the specified Library is "+lib.deptCode+". The library has the following");
+
         for (Books bk: lib.book)
             bk.displayBookDetails();
         for (Furniture ft:lib.furniture)
