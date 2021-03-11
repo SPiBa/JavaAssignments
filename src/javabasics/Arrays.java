@@ -23,7 +23,8 @@ public class Arrays {
         while (i <= noOfDigits - 1) {
             boolean isSame = false;
             //get the 4 digit random number
-            String a = "MH" + random.nextInt(999) + 1;
+            String randNum = String.format("%04d",random.nextInt(10000));
+            String a = "MH" + randNum;
             //check if the number is unique
             for (int j = 0; j < 1; j++) {
                 if (numPlate[j] == a)
